@@ -116,14 +116,6 @@ total_acc_avg[2.0]
 
 
 def fill_mort_acc(total_acc, mort_acc):
-    '''
-    Accepts the total_acc and mort_acc values for the row.
-    Checks if the mort_acc is NaN , if so, it returns the avg mort_acc value
-    for the corresponding total_acc value for that row.
-
-    total_acc_avg here should be a Series or dictionary containing the mapping of the
-    groupby averages of mort_acc per total_acc values.
-    '''
     if np.isnan(mort_acc):
         return total_acc_avg[total_acc]
     else:
@@ -199,9 +191,6 @@ from tensorflow.keras.layers import Dense, Activation,Dropout
 from tensorflow.keras.constraints import max_norm
 
 model = Sequential()
-
-# https://stats.stackexchange.com/questions/181/how-to-choose-the-number-of-hidden-layers-and-nodes-in-a-feedforward-neural-netw
-
 
 # input layer
 model.add(Dense(78,  activation='relu'))
